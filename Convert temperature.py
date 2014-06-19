@@ -1,4 +1,4 @@
-#Author: Sahm Samarghandfi
+#Author: Sahm Samarghandi
 #Created 12/28/13
 #License: Free to use, distrubute, change, profit off of
 
