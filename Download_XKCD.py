@@ -11,19 +11,15 @@ while 1:
         break
     else:
         try:
-            live_comics.append(re.findall(r'http://imgs.xkcd.com/comics/.+png', html)[0])
+            live_comics.append(re.findall(r'http://imgs.xkcd.com/comics/.+?\....?', html)[0])
         except:
-            try:
-                live_comics.append(re.findall(r'http://imgs.xkcd.com/comics/.+jpg', html)[0])
-            except:
-                try:
-                    live_comics.append(re.findall(r'http://imgs.xkcd.com/comics/.+gif', html)[0])
-                except:
-                    pass
+            pass
     print(x),
     
-y=1
-print "saving"
+y=0
+print "saving %d" % (int(y)+1)
 for n in live_comics:
-    urllib.urlretrieve(n,"%s.%s" % (y,n[-3:]))
+    print n
     y+=1
+    urllib.urlretrieve(n,"%s.%s" % (y,n[-3:]))
+
