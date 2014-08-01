@@ -17,9 +17,8 @@ while 1:
     print(x),
     
 y=0
-print "saving %d" % (int(y)+1)
 for n in live_comics:
-    print n
+    print "saving %s" % re.findall('http://imgs.xkcd.com/comics/(.*?)\....',n)[0]+'.'+n[-3:]
     y+=1
-    urllib.urlretrieve(n,"%s.%s" % (y,n[-3:]))
+    urllib.urlretrieve(n, str(y)+'_'+re.findall('http://imgs.xkcd.com/comics/(.*?)\....',n)[0]+'.'+n[-3:])
 
